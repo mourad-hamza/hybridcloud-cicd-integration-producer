@@ -116,5 +116,9 @@ dist
 .pnp.*
 
 # Environements configurations
-configs/config.js
 configs/config.dev.js
+configs/config.js
+
+Dockerfile
+.dockerignore
+.gitignore
