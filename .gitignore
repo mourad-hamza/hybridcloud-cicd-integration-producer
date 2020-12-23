@@ -117,5 +117,5 @@ dist
 
 # Environements configurations
 configs/config.dev.js
-# configs/config.js
+configs/config.js
 configs/config.empty.js
