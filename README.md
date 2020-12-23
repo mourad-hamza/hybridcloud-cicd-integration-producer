@@ -2,7 +2,7 @@
 
 ### Variables
                     
-| Environement variables | Config file varialbes | Description | Value sample |
+| Environement variables | Config file varialbes | Description | Value sample            |
 ---------------------- | ---------------------- | ----------- | ------------
 | PORT | config.producerPort | Description ... | Value .. |
 | PRODUCER_IS_GET_METHOD_ENABLED | config.producerIsGetMethodEnabled | Description ... | Value .. |
