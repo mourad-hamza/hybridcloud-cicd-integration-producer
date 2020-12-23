@@ -1,0 +1,16 @@
+{
+    "name": "hybridcloud-cicd-integration-producer",
+    "version": "0.0.1",
+    "description": "hybridcloud-cicd-integration-producer",
+    "scripts": {
+        "start": "node start"
+    },
+    "dependencies": {
+        "body-parser": "1.19.0",
+        "express": "4.17.1",
+        "kafkajs": "1.15.0",
+        "express-basic-auth": "1.2.0",
+        "morgan": "1.10.0",
+        "log-timestamp": "0.3.0"
+    }
+}
