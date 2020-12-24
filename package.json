@@ -1,7 +1,7 @@
 {
     "name": "hybridcloud-cicd-integration-producer",
-    "version": "0.0.1",
-    "description": "Hybid Cloud CI/CD Integration actions producer",
+    "version": "0.0.2",
+    "description": "Hybrid Cloud CI/CD Integration actions producer",
     "author": "MOURAD Hamza, https://mourad-hamza.medium.com | https://www.linkedin.com/in/hamza-mourad",
     "license": "Apache License",
     "scripts": {
