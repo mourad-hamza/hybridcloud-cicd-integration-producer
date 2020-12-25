@@ -20,7 +20,12 @@ const { Kafka, CompressionTypes, logLevel } = require('kafkajs')
 ###################################################################################*/
 const PORT = process.env.PORT || config.producerPort
 const PRODUCER_IS_GET_METHOD_ENABLED = process.env.PRODUCER_IS_GET_METHOD_ENABLED || config.producerIsGetMethodEnabled
-const PRODUCER_BASIC_AUTH_CREDENTIALS = process.env.PRODUCER_BASIC_AUTH_CREDENTIALS || config.producerBasicAuthCredentials
+var PRODUCER_BASIC_AUTH_CREDENTIALS = ''
+if (process.env.PRODUCER_BASIC_AUTH_CREDENTIALS) {
+  PRODUCER_BASIC_AUTH_CREDENTIALS = JSON.parse(process.env.PRODUCER_BASIC_AUTH_CREDENTIALS)
+} else {
+  PRODUCER_BASIC_AUTH_CREDENTIALS = config.producerBasicAuthCredentials
+}
 const KAFKA_CLIENT_ID = process.env.KAFKA_CLIENT_ID || config.kafkaClientId
 const KAFKA_BROKERS = process.env.KAFKA_BROKERS || config.kafkaBrokers
 const KAFKA_AUTHENTICATION_TIMEOUT = process.env.KAFKA_AUTHENTICATION_TIMEOUT || config.kafkaAuthenticationTimeout
@@ -38,16 +43,17 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(basicAuth({
-  users: PRODUCER_BASIC_AUTH_CREDENTIALS,
+  users:  PRODUCER_BASIC_AUTH_CREDENTIALS,
+  //users:  JSON.parse(PRODUCER_BASIC_AUTH_CREDENTIALS),
   challenge: true
 }))
 const kafka = new Kafka({
   clientId: KAFKA_CLIENT_ID,
   brokers: [KAFKA_BROKERS],
-  authenticationTimeout: KAFKA_AUTHENTICATION_TIMEOUT,
-  reauthenticationThreshold: KAFKA_REAUTHENTICATION_THRESHOLD,
-  connectionTimeout: KAFKA_CONNECTION_TIMEOUT,
-  requestTimeout: KAFKA_REQUEST_TIMEOUT,
+  authenticationTimeout: parseInt(KAFKA_AUTHENTICATION_TIMEOUT),
+  reauthenticationThreshold: parseInt(KAFKA_REAUTHENTICATION_THRESHOLD),
+  connectionTimeout: parseInt(KAFKA_CONNECTION_TIMEOUT),
+  requestTimeout: parseInt(KAFKA_REQUEST_TIMEOUT),
   ssl: true,
   sasl: {
     mechanism: KAFKA_MECHANISM,
