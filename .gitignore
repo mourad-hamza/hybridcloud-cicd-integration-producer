@@ -118,3 +118,4 @@ dist
 # Environements configurations
 configs/config.js
 configs/config.dev.js
+start.env.sh
