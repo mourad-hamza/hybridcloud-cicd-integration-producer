@@ -9,7 +9,7 @@ metadata:
 type: Opaque
 stringData:
     PRODUCER_BASIC_AUTH_CREDENTIALS: '{ "producer-username": "producer-password" }'
-    KAFKA_USERNAME:'my-kafka-user'
+    KAFKA_USERNAME: 'my-kafka-user'
     KAFKA_PASSWORD: 'my-kafka-password'
 ---
 apiVersion: apps/v1
