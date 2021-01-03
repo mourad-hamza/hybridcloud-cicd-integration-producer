@@ -33,28 +33,28 @@ spec:
         name: producer
         env:
           - name: PORT
-            value: 8080
+            value: "8080"
           - name: PRODUCER_IS_GET_METHOD_ENABLED
-            value: false
+            value: "false"
           - name: PRODUCER_BASIC_AUTH_CREDENTIALS
             valueFrom:
               secretKeyRef:
                 name: hybridcloud-cicd-integration-producer
                 key: PRODUCER_BASIC_AUTH_CREDENTIALS
           - name: KAFKA_CLIENT_ID
-            value: cicd-producer-sample
+            value: "cicd-producer-sample"
           - name: KAFKA_BROKERS
-            value: my-brokers:port
+            value: "my-brokers:port"
           - name: KAFKA_AUTHENTICATION_TIMEOUT
-            value: 1000
+            value: "1000"
           - name: KAFKA_REAUTHENTICATION_THRESHOLD
-            value: 10000
+            value: "10000"
           - name: KAFKA_CONNECTION_TIMEOUT
-            value: 1000
+            value: "1000"
           - name: KAFKA_REQUEST_TIMEOUT          
-            value: 30000
+            value: "30000"
           - name: KAFKA_MECHANISM
-            value: scram-sha-256
+            value: "scram-sha-256"
           - name: KAFKA_USERNAME
             valueFrom:
               secretKeyRef:
@@ -66,7 +66,7 @@ spec:
                 name: hybridcloud-cicd-integration-producer
                 key: KAFKA_PASSWORD
           - name: KAFKA_TOPIC
-            value: my-cicd-topic
+            value: "my-cicd-topic"
         ports:
         - containerPort: 8080
           protocol: TCP
