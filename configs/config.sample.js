@@ -5,7 +5,7 @@ module.exports = {
         "producer-username": "producer-password"
     },
     'kafkaClientId': 'cicd-producer-sample',
-    'kafkaBrokers': 'my-brokers',
+    'kafkaBrokers': 'my-brokers:9400',
     'kafkaAuthenticationTimeout': 9000, // 1000
     'kafkaReauthenticationThreshold': 90000, // 10000
     'kafkaConnectionTimeout': 9000, // 1000
